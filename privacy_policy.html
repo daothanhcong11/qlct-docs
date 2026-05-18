@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Quản lý chi tiêu (QLCT)</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         max-width: 760px; margin: 40px auto; padding: 0 24px;
+         color: #1f2937; line-height: 1.6; }
+  h1 { color: #7FD603; border-bottom: 2px solid #7FD603; padding-bottom: 8px; }
+  h2 { color: #374151; margin-top: 32px; }
+  a { color: #7FD603; }
+  .lang-switch { text-align: right; margin-bottom: 16px; }
+  .lang-switch a { margin-left: 12px; font-size: 13px; }
+  .meta { color: #6b7280; font-size: 13px; }
+  ul li { margin: 6px 0; }
+  .box { background: #f9fafb; border-left: 4px solid #7FD603;
+         padding: 12px 16px; margin: 16px 0; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div class="lang-switch">
+  <a href="#vi">Tiếng Việt</a> · <a href="#en">English</a> · <a href="index.html">← Home</a>
+</div>
+
+<!-- =================== VIETNAMESE =================== -->
+<section id="vi">
+<h1>Chính sách bảo mật</h1>
+<p class="meta"><strong>Ứng dụng:</strong> Quản lý chi tiêu (QLCT)<br>
+<strong>Có hiệu lực:</strong> 17/05/2026<br>
+<strong>Liên hệ:</strong> <a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a></p>
+
+<div class="box">
+  <strong>Tóm tắt:</strong> QLCT lưu toàn bộ giao dịch tài chính của bạn <em>cục bộ trên thiết bị</em>.
+  Chúng tôi <strong>không</strong> thu thập, không gửi lên server, không bán dữ liệu của bạn.
+  Chỉ có quảng cáo (AdMob) và báo lỗi tự nguyện (Firebase) — bạn có thể tắt.
+</div>
+
+<h2>1. Dữ liệu chúng tôi lưu</h2>
+<p>QLCT lưu các thông tin sau <strong>chỉ trên thiết bị của bạn</strong> (cơ sở dữ liệu SQLite cục bộ):</p>
+<ul>
+  <li>Giao dịch thu/chi: số tiền, danh mục, ngày, ghi chú, ví</li>
+  <li>Ngân sách, mục tiêu tiết kiệm, các khoản nợ</li>
+  <li>Tuỳ chọn cá nhân: ngôn ngữ, đối tượng người dùng, theme</li>
+</ul>
+<p>Dữ liệu này <strong>không bao giờ rời khỏi thiết bị</strong> trừ khi bạn chủ động bấm "Sao lưu" để xuất file backup tự lưu.</p>
+
+<h2>2. Dữ liệu chúng tôi KHÔNG thu thập</h2>
+<ul>
+  <li>Tên, email, số điện thoại, địa chỉ</li>
+  <li>Tài khoản ngân hàng thật, số thẻ</li>
+  <li>Vị trí GPS chính xác</li>
+  <li>Danh bạ, ảnh, file</li>
+</ul>
+
+<h2>3. Dịch vụ bên thứ ba</h2>
+
+<h3>3.1. Google AdMob (quảng cáo)</h3>
+<p>App có quảng cáo banner và interstitial. AdMob có thể truy cập:</p>
+<ul>
+  <li>Advertising ID (định danh quảng cáo, có thể reset trong cài đặt thiết bị)</li>
+  <li>Vị trí xấp xỉ (theo IP / múi giờ)</li>
+  <li>Thông tin thiết bị cơ bản: model, hệ điều hành</li>
+</ul>
+<p>Chi tiết: <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</p>
+<p>Bạn có thể nâng cấp <strong>QLCT Pro</strong> (one-time) để loại bỏ hoàn toàn quảng cáo.</p>
+
+<h3>3.2. Google Play Billing</h3>
+<p>Khi mua QLCT Pro, Google Play xử lý thanh toán. Chúng tôi chỉ nhận trạng thái mua thành công, không có thông tin thẻ.</p>
+
+<h3>3.3. Firebase Crashlytics + Analytics (nếu bật)</h3>
+<p>App có thể gửi báo cáo lỗi (crash) và sự kiện sử dụng (event) ẩn danh về Firebase để giúp chúng tôi sửa lỗi và cải thiện trải nghiệm. Dữ liệu gửi:</p>
+<ul>
+  <li>Stack trace khi crash, loại thiết bị, phiên bản OS</li>
+  <li>Sự kiện ẩn danh: "transaction_added", "budget_alert_fired", "persona_switched"</li>
+</ul>
+<p><strong>KHÔNG</strong> có số tiền cụ thể, danh mục thực, hay nội dung giao dịch.</p>
+
+<h3>3.4. Tỷ giá ngoại tệ</h3>
+<p>Màn "Tỷ giá" gọi API miễn phí <a href="https://github.com/fawazahmed0/exchange-api" target="_blank">fawazahmed0/exchange-api</a> qua jsDelivr CDN. API trả về tỷ giá tham khảo — không có thông tin user nào được gửi đi.</p>
+
+<h2>4. Quyền (permissions) Android</h2>
+<ul>
+  <li><strong>INTERNET</strong>: tải tỷ giá, quảng cáo, gửi crash report (tự nguyện)</li>
+  <li><strong>POST_NOTIFICATIONS</strong> (Android 13+): hiển thị cảnh báo ngân sách, mục tiêu tiết kiệm, hạn trả nợ</li>
+  <li><strong>USE_BIOMETRIC / USE_FINGERPRINT</strong> (tuỳ chọn): khoá app bằng vân tay/khuôn mặt</li>
+</ul>
+
+<h2>5. Quyền của bạn</h2>
+<ul>
+  <li><strong>Truy cập</strong>: mọi dữ liệu của bạn đều ở trên thiết bị, có thể xem trực tiếp trong app</li>
+  <li><strong>Xuất</strong>: Settings → Sao lưu / Xuất CSV — bạn nhận file copy hoàn chỉnh</li>
+  <li><strong>Xoá</strong>: Settings → Xoá toàn bộ dữ liệu (xác nhận 2 bước, không phục hồi được). Hoặc đơn giản gỡ cài đặt app.</li>
+  <li><strong>Tắt quảng cáo</strong>: mua QLCT Pro hoặc opt-out advertising ID trong cài đặt Android</li>
+  <li><strong>Tắt Crashlytics</strong>: hiện chỉ có thể tắt thông qua đặt thiết bị offline; phiên bản app tiếp theo sẽ thêm toggle</li>
+</ul>
+
+<h2>6. Trẻ em</h2>
+<p>QLCT không nhắm đến trẻ em dưới 13 tuổi. Chúng tôi không cố ý thu thập dữ liệu từ trẻ em. Nếu bạn là phụ huynh và phát hiện con bạn đã cung cấp thông tin, vui lòng liên hệ để chúng tôi xoá ngay.</p>
+
+<h2>7. Thay đổi chính sách</h2>
+<p>Chúng tôi có thể cập nhật chính sách này. Bản mới sẽ có thông báo trong app + ngày "Có hiệu lực" được cập nhật ở đầu trang.</p>
+
+<h2>8. Liên hệ</h2>
+<p>Mọi câu hỏi: <a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a></p>
+</section>
+
+<hr style="margin: 60px 0; border: none; border-top: 1px solid #e5e7eb;">
+
+<!-- =================== ENGLISH =================== -->
+<section id="en">
+<h1>Privacy Policy</h1>
+<p class="meta"><strong>App:</strong> Quản lý chi tiêu (QLCT)<br>
+<strong>Effective:</strong> 17 May 2026<br>
+<strong>Contact:</strong> <a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a></p>
+
+<div class="box">
+  <strong>TL;DR:</strong> QLCT stores all your financial transactions <em>locally on your device</em>.
+  We do <strong>not</strong> collect, send to servers, or sell your data.
+  Only advertising (AdMob) and opt-in crash reporting (Firebase) — both can be disabled.
+</div>
+
+<h2>1. Data we store</h2>
+<p>QLCT stores the following information <strong>only on your device</strong> (local SQLite database):</p>
+<ul>
+  <li>Income/expense transactions: amount, category, date, note, wallet</li>
+  <li>Budgets, savings goals, debts</li>
+  <li>Personal preferences: language, user persona, theme</li>
+</ul>
+<p>This data <strong>never leaves your device</strong> unless you actively tap "Backup" to export a self-managed backup file.</p>
+
+<h2>2. What we do NOT collect</h2>
+<ul>
+  <li>Name, email, phone number, address</li>
+  <li>Real bank accounts, card numbers</li>
+  <li>Precise GPS location</li>
+  <li>Contacts, photos, files</li>
+</ul>
+
+<h2>3. Third-party services</h2>
+
+<h3>3.1. Google AdMob (advertising)</h3>
+<p>The app shows banner and interstitial ads. AdMob may access:</p>
+<ul>
+  <li>Advertising ID (resettable in device settings)</li>
+  <li>Approximate location (IP / timezone)</li>
+  <li>Basic device info: model, OS</li>
+</ul>
+<p>Details: <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</p>
+<p>You can upgrade to <strong>QLCT Pro</strong> (one-time) to remove ads entirely.</p>
+
+<h3>3.2. Google Play Billing</h3>
+<p>When you buy QLCT Pro, Google Play processes payment. We only receive the success status — no card information.</p>
+
+<h3>3.3. Firebase Crashlytics + Analytics (if enabled)</h3>
+<p>The app may send anonymous crash reports and usage events to Firebase to help us fix bugs and improve UX. Data sent:</p>
+<ul>
+  <li>Crash stack trace, device model, OS version</li>
+  <li>Anonymous events: "transaction_added", "budget_alert_fired", "persona_switched"</li>
+</ul>
+<p><strong>NO</strong> specific amounts, real category names, or transaction content is sent.</p>
+
+<h3>3.4. Foreign exchange API</h3>
+<p>The "Exchange" screen calls a free API (<a href="https://github.com/fawazahmed0/exchange-api" target="_blank">fawazahmed0/exchange-api</a>) via jsDelivr CDN. The API returns reference rates — no user information is sent.</p>
+
+<h2>4. Android permissions</h2>
+<ul>
+  <li><strong>INTERNET</strong>: exchange rates, ads, opt-in crash reports</li>
+  <li><strong>POST_NOTIFICATIONS</strong> (Android 13+): budget alerts, savings milestones, debt due reminders</li>
+  <li><strong>USE_BIOMETRIC / USE_FINGERPRINT</strong> (optional): biometric app lock</li>
+</ul>
+
+<h2>5. Your rights</h2>
+<ul>
+  <li><strong>Access</strong>: all your data is on your device — view it directly in the app</li>
+  <li><strong>Export</strong>: Settings → Backup / Export CSV — get a complete copy</li>
+  <li><strong>Delete</strong>: Settings → Erase all data (2-step confirm, irreversible). Or simply uninstall the app.</li>
+  <li><strong>Disable ads</strong>: buy QLCT Pro or opt out of advertising ID in Android settings</li>
+  <li><strong>Disable Crashlytics</strong>: currently only via offline mode; a toggle will be added in the next release</li>
+</ul>
+
+<h2>6. Children</h2>
+<p>QLCT is not directed to children under 13. We do not knowingly collect data from children. If you are a parent and discover your child has provided information, please contact us — we will delete it immediately.</p>
+
+<h2>7. Policy changes</h2>
+<p>We may update this policy. Updates will be announced in-app, and the "Effective" date at the top will be updated.</p>
+
+<h2>8. Contact</h2>
+<p>Questions: <a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a></p>
+</section>
+
+</body>
+</html>
