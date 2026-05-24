@@ -7,187 +7,51 @@
 <title>Privacy Policy — Expense Management</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%237FD603'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='52' fill='white' font-weight='bold' font-family='system-ui'%3E%E2%82%AB%3C/text%3E%3C/svg%3E">
 <style>
-  :root {
-    --green: #7FD603;
-    --green-dark: #6BB502;
-    --green-soft: #F0FCE0;
-    --text: #0F172A;
-    --muted: #64748B;
-    --border: #E2E8F0;
-    --bg: #FFFFFF;
-    --soft: #F8FAFC;
-    --shadow-sm: 0 1px 2px rgba(15,23,42,0.04), 0 1px 4px rgba(15,23,42,0.04);
-    --radius: 14px;
-    --radius-sm: 10px;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --text: #F1F5F9;
-      --muted: #94A3B8;
-      --border: #334155;
-      --bg: #0F172A;
-      --soft: #1E293B;
-      --green-soft: #1E3A0A;
-    }
-  }
+  :root { --green: #7FD603; --green-dark: #6BB502; --green-soft: #F0FCE0; --text: #0F172A; --muted: #64748B; --border: #E2E8F0; --bg: #FFFFFF; --soft: #F8FAFC; --radius: 14px; --radius-sm: 10px; }
+  @media (prefers-color-scheme: dark) { :root { --text: #F1F5F9; --muted: #94A3B8; --border: #334155; --bg: #0F172A; --soft: #1E293B; --green-soft: #1E3A0A; } }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-                 "Noto Sans", "Noto Sans CJK SC", "Noto Sans JP", sans-serif;
-    color: var(--text); background: var(--bg);
-    line-height: 1.7; -webkit-font-smoothing: antialiased;
-  }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Noto Sans CJK SC", "Noto Sans JP", sans-serif; color: var(--text); background: var(--bg); line-height: 1.7; -webkit-font-smoothing: antialiased; }
   a { color: var(--green-dark); text-decoration: none; }
   a:hover { text-decoration: underline; }
-
-  /* Reading progress bar */
-  .progress {
-    position: fixed; top: 0; left: 0; height: 3px;
-    background: linear-gradient(90deg, var(--green), var(--green-dark));
-    width: 0%; z-index: 200; transition: width 0.1s linear;
-  }
-
-  /* Lang switcher */
-  .lang-bar {
-    position: sticky; top: 0; z-index: 100;
-    background: color-mix(in srgb, var(--bg) 92%, transparent);
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 10px 16px;
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 12px;
-  }
-  .home-back {
-    display: inline-flex; align-items: center; gap: 4px;
-    color: var(--muted); font-size: 13px; font-weight: 500;
-    padding: 6px 10px; border-radius: 8px;
-    transition: all 0.15s ease;
-  }
+  .progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--green), var(--green-dark)); width: 0%; z-index: 200; transition: width 0.1s linear; }
+  .lang-bar { position: sticky; top: 0; z-index: 100; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .home-back { display: inline-flex; align-items: center; gap: 4px; color: var(--muted); font-size: 13px; font-weight: 500; padding: 6px 10px; border-radius: 8px; transition: all 0.15s ease; }
   .home-back:hover { color: var(--green-dark); background: var(--soft); text-decoration: none; }
   .home-back svg { width: 14px; height: 14px; }
-  .lang-pill { display: inline-flex; gap: 4px; background: var(--soft);
-               padding: 4px; border-radius: 999px; border: 1px solid var(--border); }
-  .lang-pill button {
-    background: transparent; border: none; cursor: pointer;
-    padding: 6px 12px; border-radius: 999px; color: var(--muted);
-    font-size: 13px; font-weight: 500; transition: all 0.2s ease;
-    font-family: inherit;
-  }
+  .lang-pill { display: inline-flex; gap: 4px; background: var(--soft); padding: 4px; border-radius: 999px; border: 1px solid var(--border); }
+  .lang-pill button { background: transparent; border: none; cursor: pointer; padding: 6px 12px; border-radius: 999px; color: var(--muted); font-size: 13px; font-weight: 500; transition: all 0.2s ease; font-family: inherit; }
   .lang-pill button:hover { color: var(--text); }
-  .lang-pill button.active {
-    background: var(--green); color: white; font-weight: 600;
-    box-shadow: 0 2px 6px rgba(127,214,3,0.35);
-  }
-
-  /* Document layout */
-  .doc {
-    max-width: 760px; margin: 0 auto; padding: 40px 24px 80px;
-  }
-
-  /* Page title block */
-  .page-head {
-    margin-bottom: 36px; padding-bottom: 28px;
-    border-bottom: 1px solid var(--border);
-  }
-  .badge {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 5px 12px; border-radius: 999px;
-    background: var(--green-soft); color: var(--green-dark);
-    font-size: 12px; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.04em;
-    margin-bottom: 14px;
-  }
+  .lang-pill button.active { background: var(--green); color: white; font-weight: 600; box-shadow: 0 2px 6px rgba(127,214,3,0.35); }
+  .doc { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
+  .page-head { margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; background: var(--green-soft); color: var(--green-dark); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 14px; }
   .badge svg { width: 14px; height: 14px; }
-  h1 {
-    font-size: clamp(28px, 5vw, 38px); font-weight: 800;
-    letter-spacing: -0.02em; line-height: 1.2;
-    color: var(--text); margin-bottom: 14px;
-  }
+  h1 { font-size: clamp(28px, 5vw, 38px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; color: var(--text); margin-bottom: 14px; }
   .meta { color: var(--muted); font-size: 14px; line-height: 1.8; }
   .meta strong { color: var(--text); font-weight: 600; }
-
-  /* TL;DR callout */
-  .box {
-    background: linear-gradient(135deg, var(--green-soft) 0%, var(--soft) 100%);
-    border: 1px solid var(--green);
-    border-left: 4px solid var(--green);
-    padding: 16px 18px; margin: 24px 0;
-    border-radius: var(--radius-sm);
-    font-size: 14.5px; line-height: 1.65;
-  }
+  .box { background: linear-gradient(135deg, var(--green-soft) 0%, var(--soft) 100%); border: 1px solid var(--green); border-left: 4px solid var(--green); padding: 16px 18px; margin: 24px 0; border-radius: var(--radius-sm); font-size: 14.5px; line-height: 1.65; }
   .box strong { color: var(--green-dark); }
-
-  /* Section headings */
-  h2 {
-    font-size: 20px; font-weight: 700;
-    color: var(--text); margin-top: 40px; margin-bottom: 12px;
-    letter-spacing: -0.01em;
-    display: flex; align-items: baseline; gap: 10px;
-  }
-  h2::before {
-    content: ""; width: 4px; height: 18px;
-    background: var(--green); border-radius: 2px;
-    display: inline-block;
-  }
-  h3 {
-    font-size: 15.5px; font-weight: 600;
-    color: var(--text); margin-top: 22px; margin-bottom: 8px;
-  }
-
-  /* Body */
+  h2 { font-size: 20px; font-weight: 700; color: var(--text); margin-top: 40px; margin-bottom: 12px; letter-spacing: -0.01em; display: flex; align-items: baseline; gap: 10px; }
+  h2::before { content: ""; width: 4px; height: 18px; background: var(--green); border-radius: 2px; display: inline-block; }
+  h3 { font-size: 15.5px; font-weight: 600; color: var(--text); margin-top: 22px; margin-bottom: 8px; }
   p { margin-bottom: 12px; color: var(--text); font-size: 15.5px; }
   ul { margin: 8px 0 14px 22px; }
   ul li { margin: 6px 0; color: var(--text); font-size: 15px; }
   ul li strong { color: var(--text); font-weight: 600; }
-
-  /* Footer */
-  .doc-footer {
-    margin-top: 60px; padding-top: 24px;
-    border-top: 1px solid var(--border);
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 16px;
-    font-size: 14px; color: var(--muted);
-  }
+  .doc-footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--muted); }
   .doc-footer a { color: var(--muted); }
   .doc-footer a:hover { color: var(--green-dark); }
-
-  /* Lang sections */
   section[data-lang] { display: none; animation: fadeIn 0.3s ease; }
   section[data-lang].active { display: block; }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Back to top button */
-  .to-top {
-    position: fixed; bottom: 24px; right: 24px;
-    width: 44px; height: 44px; border-radius: 50%;
-    background: var(--green); color: white;
-    border: none; cursor: pointer;
-    box-shadow: 0 6px 16px rgba(127,214,3,0.4);
-    display: flex; align-items: center; justify-content: center;
-    opacity: 0; pointer-events: none; transition: opacity 0.25s ease, transform 0.25s ease;
-    z-index: 50;
-  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  .to-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; border-radius: 50%; background: var(--green); color: white; border: none; cursor: pointer; box-shadow: 0 6px 16px rgba(127,214,3,0.4); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.25s ease, transform 0.25s ease; z-index: 50; }
   .to-top svg { width: 18px; height: 18px; }
   .to-top.show { opacity: 1; pointer-events: auto; }
   .to-top:hover { background: var(--green-dark); transform: translateY(-2px); }
-
-  @media (max-width: 480px) {
-    .doc { padding: 28px 20px 60px; }
-    .lang-pill button { padding: 5px 9px; font-size: 12px; }
-    h2 { margin-top: 30px; }
-    .to-top { bottom: 16px; right: 16px; }
-  }
-  @media (max-width: 380px) {
-    .home-back span { display: none; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; animation: none !important; }
-    html { scroll-behavior: auto; }
-  }
+  @media (max-width: 480px) { .doc { padding: 28px 20px 60px; } .lang-pill button { padding: 5px 9px; font-size: 12px; } h2 { margin-top: 30px; } .to-top { bottom: 16px; right: 16px; } }
+  @media (max-width: 380px) { .home-back span { display: none; } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
@@ -218,38 +82,41 @@
   </span>
   <h1>Chính sách bảo mật</h1>
   <p class="meta">
-    <strong>Ứng dụng:</strong> Quản lý chi tiêu (QLCT)<br>
-    <strong>Có hiệu lực:</strong> 24/05/2026<br>
+    <strong>Ứng dụng:</strong> Expense Management — Sổ chi tiêu<br>
+    <strong>Có hiệu lực:</strong> 25/05/2026<br>
     <strong>Liên hệ:</strong> <a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a>
   </p>
 </div>
 
 <div class="box">
-  <strong>Tóm tắt:</strong> QLCT lưu toàn bộ dữ liệu tài chính của bạn <em>cục bộ trên thiết bị</em>.
+  <strong>Tóm tắt:</strong> Ứng dụng lưu toàn bộ dữ liệu tài chính của bạn <em>cục bộ trên thiết bị</em>.
   Chúng tôi <strong>không</strong> thu thập, không gửi lên server, không bán dữ liệu của bạn.
   Tính năng mạng duy nhất gồm: hiển thị quảng cáo (Google AdMob) và tải tỷ giá ngoại tệ (API công khai).
 </div>
 
 <h2>1. Dữ liệu chúng tôi lưu</h2>
-<p>QLCT chỉ lưu các thông tin sau <strong>trên thiết bị của bạn</strong> (cơ sở dữ liệu SQLite cục bộ):</p>
+<p>Ứng dụng chỉ lưu các thông tin sau <strong>trên thiết bị của bạn</strong> (cơ sở dữ liệu SQLite cục bộ):</p>
 <ul>
-  <li>Giao dịch thu/chi: số tiền, danh mục, ngày, ghi chú, ví</li>
+  <li>Giao dịch thu/chi: số tiền, danh mục, ngày, ghi chú, ví, ảnh hoá đơn (tuỳ chọn)</li>
   <li>Ngân sách, mục tiêu tiết kiệm, các khoản nợ, tài sản/khoản phải trả (net worth)</li>
   <li>Tuỳ chọn cá nhân: ngôn ngữ, đối tượng người dùng, theme, khoá bảo mật</li>
 </ul>
 <p>Dữ liệu này <strong>không bao giờ rời khỏi thiết bị</strong> trừ khi bạn chủ động bấm "Sao lưu" để xuất file CSV/JSON tự quản, hoặc nếu bạn bật Android Auto Backup tới Google Drive cá nhân (do Android quản lý hoàn toàn, không qua server của chúng tôi).</p>
 
-<h2>2. Dữ liệu chúng tôi KHÔNG thu thập</h2>
+<h2>2. Ảnh hoá đơn (tuỳ chọn, chỉ trên thiết bị)</h2>
+<p>Nếu bạn chọn đính kèm ảnh hoá đơn vào giao dịch (qua "Chụp ảnh" hoặc "Chọn từ thư viện"), ảnh sẽ được sao chép vào thư mục tài liệu riêng của ứng dụng trên thiết bị. Ảnh <strong>không bao giờ được tải lên</strong> server nào và <strong>không bao giờ được chia sẻ</strong> với bên thứ ba. Ảnh chỉ tồn tại đến khi bạn xoá giao dịch hoặc xoá dữ liệu ứng dụng.</p>
+
+<h2>3. Dữ liệu chúng tôi KHÔNG thu thập</h2>
 <ul>
   <li>Tên, email, số điện thoại, địa chỉ</li>
   <li>Tài khoản ngân hàng thật, số thẻ</li>
   <li>Vị trí GPS chính xác</li>
-  <li>Danh bạ, ảnh, file</li>
+  <li>Danh bạ, file ngoài ảnh hoá đơn bạn chủ động đính kèm</li>
 </ul>
 
-<h2>3. Dịch vụ bên thứ ba</h2>
+<h2>4. Dịch vụ bên thứ ba</h2>
 
-<h3>3.1. Google AdMob (quảng cáo)</h3>
+<h3>4.1. Google AdMob (quảng cáo)</h3>
 <p>App hiển thị quảng cáo banner và interstitial. AdMob có thể truy cập:</p>
 <ul>
   <li>Advertising ID (định danh quảng cáo, có thể reset trong cài đặt thiết bị)</li>
@@ -257,19 +124,19 @@
   <li>Thông tin thiết bị cơ bản: model, hệ điều hành</li>
 </ul>
 <p>Chi tiết: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách bảo mật của Google</a>.</p>
-<p>Bạn có thể tắt quảng cáo cá nhân hoá tại: Android Settings → Google → Quảng cáo → Opt out of Ads Personalization.</p>
 
-<h3>3.2. API tỷ giá ngoại tệ</h3>
+<h3>4.2. API tỷ giá ngoại tệ</h3>
 <p>Màn "Tỷ giá" gọi API miễn phí <a href="https://github.com/fawazahmed0/exchange-api" target="_blank" rel="noopener">fawazahmed0/exchange-api</a> qua jsDelivr CDN. API chỉ trả về tỷ giá tham khảo — không có thông tin user nào được gửi đi.</p>
 
-<h2>4. Quyền (permissions) Android</h2>
+<h2>5. Quyền (permissions) Android</h2>
 <ul>
   <li><strong>INTERNET</strong>: tải tỷ giá, quảng cáo</li>
   <li><strong>POST_NOTIFICATIONS</strong> (Android 13+): cảnh báo ngân sách, mục tiêu tiết kiệm, hạn trả nợ</li>
   <li><strong>USE_BIOMETRIC / USE_FINGERPRINT</strong> (tuỳ chọn): khoá app bằng vân tay/khuôn mặt</li>
+  <li><strong>CAMERA</strong> (tuỳ chọn): chỉ kích hoạt khi bạn chọn "Chụp ảnh" để đính kèm ảnh hoá đơn/chứng từ vào giao dịch. Ảnh được lưu cục bộ trên thiết bị, không gửi đi đâu.</li>
 </ul>
 
-<h2>5. Quyền của bạn</h2>
+<h2>6. Quyền của bạn</h2>
 <ul>
   <li><strong>Truy cập</strong>: mọi dữ liệu của bạn đều ở trên thiết bị, có thể xem trực tiếp trong app</li>
   <li><strong>Xuất</strong>: Settings → Sao lưu / Xuất CSV — bạn nhận file copy hoàn chỉnh</li>
@@ -277,26 +144,26 @@
   <li><strong>Hạn chế quảng cáo</strong>: opt-out advertising ID trong cài đặt Android</li>
 </ul>
 
-<h2>6. Trẻ em</h2>
-<p>QLCT không nhắm đến trẻ em dưới 13 tuổi. Chúng tôi không cố ý thu thập dữ liệu từ trẻ em. Nếu bạn là phụ huynh và phát hiện con bạn đã cung cấp thông tin, vui lòng liên hệ để chúng tôi xoá ngay.</p>
+<h2>7. Trẻ em</h2>
+<p>Ứng dụng không nhắm đến trẻ em dưới 13 tuổi. Chúng tôi không cố ý thu thập dữ liệu từ trẻ em. Nếu bạn là phụ huynh và phát hiện con bạn đã cung cấp thông tin, vui lòng liên hệ để chúng tôi xoá ngay.</p>
 
-<h2>7. Lưu trữ dữ liệu</h2>
+<h2>8. Lưu trữ dữ liệu</h2>
 <ul>
   <li>Dữ liệu trên thiết bị: được lưu cho đến khi bạn xoá app hoặc xoá dữ liệu thủ công</li>
   <li>Chúng tôi không lưu dữ liệu nào về bạn trên server vì chúng tôi không vận hành server</li>
 </ul>
 
-<h2>8. Người dùng quốc tế (GDPR / UK / EEA / Thuỵ Sĩ)</h2>
-<p>Nếu bạn cư trú tại Khu vực Kinh tế Châu Âu (EEA), Anh, hoặc Thuỵ Sĩ, bạn có các quyền bổ sung theo GDPR/UK GDPR. Vì chúng tôi không thu thập hay xử lý bất kỳ dữ liệu cá nhân nào trên server, không có dữ liệu phía nhà điều khiển (controller) để truy cập, chuyển, hay xoá từ phía chúng tôi. Đối với dữ liệu AdMob xử lý, vui lòng tham khảo Chính sách bảo mật của Google.</p>
+<h2>9. Người dùng quốc tế (GDPR / UK / EEA / Thuỵ Sĩ)</h2>
+<p>Nếu bạn cư trú tại EEA, Anh, hoặc Thuỵ Sĩ, bạn có quyền bổ sung theo GDPR. Vì chúng tôi không thu thập hay xử lý bất kỳ dữ liệu cá nhân nào trên server, không có dữ liệu phía nhà điều khiển để truy cập, chuyển, hay xoá từ phía chúng tôi. Đối với dữ liệu AdMob xử lý, vui lòng tham khảo Chính sách bảo mật của Google.</p>
 
-<h2>9. Thay đổi chính sách</h2>
+<h2>10. Thay đổi chính sách</h2>
 <p>Chúng tôi có thể cập nhật chính sách này. Bản cập nhật sẽ được thông báo trong app + ngày "Có hiệu lực" ở đầu trang sẽ được cập nhật.</p>
 
-<h2>10. Liên hệ</h2>
+<h2>11. Liên hệ</h2>
 <p>Mọi câu hỏi: <a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a></p>
 
 <div class="doc-footer">
-  <span>© 2026 QLCT</span>
+  <span>© 2026 Expense Management</span>
   <a href="terms.html">Điều khoản sử dụng →</a>
 </div>
 </section>
@@ -310,38 +177,41 @@
   </span>
   <h1>Privacy Policy</h1>
   <p class="meta">
-    <strong>App:</strong> Quản lý chi tiêu (QLCT)<br>
-    <strong>Effective:</strong> 24 May 2026<br>
+    <strong>App:</strong> Expense Management — Sổ chi tiêu<br>
+    <strong>Effective:</strong> 25 May 2026<br>
     <strong>Contact:</strong> <a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a>
   </p>
 </div>
 
 <div class="box">
-  <strong>TL;DR:</strong> QLCT stores all your financial data <em>locally on your device</em>.
+  <strong>TL;DR:</strong> The app stores all your financial data <em>locally on your device</em>.
   We do <strong>not</strong> collect, send to servers, or sell your data.
   The only network features are: advertising (Google AdMob) and foreign-exchange rates (public API).
 </div>
 
 <h2>1. Data we store</h2>
-<p>QLCT stores the following <strong>only on your device</strong> (local SQLite database):</p>
+<p>The app stores the following <strong>only on your device</strong> (local SQLite database):</p>
 <ul>
-  <li>Income/expense transactions: amount, category, date, note, wallet</li>
+  <li>Income/expense transactions: amount, category, date, note, wallet, optional receipt photo</li>
   <li>Budgets, savings goals, debts, net-worth assets/liabilities</li>
   <li>Personal preferences: language, persona, theme, security lock</li>
 </ul>
-<p>This data <strong>never leaves your device</strong> unless you actively tap "Backup" to export a self-managed CSV/JSON file, or unless you opt in to Android's built-in Auto Backup to your private Google Drive (entirely managed by Android, not by us).</p>
+<p>This data <strong>never leaves your device</strong> unless you actively tap "Backup" or opt in to Android Auto Backup to your private Google Drive.</p>
 
-<h2>2. What we do NOT collect</h2>
+<h2>2. Receipt photos (optional, on-device only)</h2>
+<p>If you attach a receipt photo to a transaction (via "Take photo" or "Choose from gallery"), the photo is copied into the app's private documents folder on your device. The photo is <strong>never uploaded</strong> to any server and <strong>never shared</strong> with third parties.</p>
+
+<h2>3. What we do NOT collect</h2>
 <ul>
   <li>Name, email, phone number, address</li>
   <li>Real bank accounts, card numbers</li>
   <li>Precise GPS location</li>
-  <li>Contacts, photos, files</li>
+  <li>Contacts, files other than receipt photos you actively attach</li>
 </ul>
 
-<h2>3. Third-party services</h2>
+<h2>4. Third-party services</h2>
 
-<h3>3.1. Google AdMob (advertising)</h3>
+<h3>4.1. Google AdMob (advertising)</h3>
 <p>The app shows banner and interstitial ads. AdMob may access:</p>
 <ul>
   <li>Advertising ID (resettable in device settings)</li>
@@ -349,46 +219,43 @@
   <li>Basic device info: model, OS</li>
 </ul>
 <p>Details: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
-<p>You can opt out of personalized ads in: Android Settings → Google → Ads → Opt out of Ads Personalization.</p>
 
-<h3>3.2. Foreign-exchange API</h3>
-<p>The "Exchange" screen calls a free public API (<a href="https://github.com/fawazahmed0/exchange-api" target="_blank" rel="noopener">fawazahmed0/exchange-api</a>) via jsDelivr CDN. The API returns reference rates only — no user information is sent.</p>
+<h3>4.2. Foreign-exchange API</h3>
+<p>The "Exchange" screen calls a free public API (<a href="https://github.com/fawazahmed0/exchange-api" target="_blank" rel="noopener">fawazahmed0/exchange-api</a>) via jsDelivr CDN. No user information is sent.</p>
 
-<h2>4. Android permissions</h2>
+<h2>5. Android permissions</h2>
 <ul>
   <li><strong>INTERNET</strong>: foreign-exchange rates, advertising</li>
   <li><strong>POST_NOTIFICATIONS</strong> (Android 13+): budget alerts, savings milestones, debt due reminders</li>
   <li><strong>USE_BIOMETRIC / USE_FINGERPRINT</strong> (optional): biometric app lock</li>
+  <li><strong>CAMERA</strong> (optional): triggered only when you tap "Take photo" to attach a receipt/invoice image to a transaction. Photos are stored locally on the device and never uploaded.</li>
 </ul>
 
-<h2>5. Your rights</h2>
+<h2>6. Your rights</h2>
 <ul>
   <li><strong>Access</strong>: all your data lives on your device — view it directly in the app</li>
-  <li><strong>Export</strong>: Settings → Backup / Export CSV — receive a complete copy</li>
-  <li><strong>Delete</strong>: Settings → Erase all data (2-step confirm, irreversible). Or simply uninstall the app.</li>
+  <li><strong>Export</strong>: Settings → Backup / Export CSV</li>
+  <li><strong>Delete</strong>: Settings → Erase all data (irreversible). Or uninstall the app.</li>
   <li><strong>Limit advertising</strong>: opt out of advertising ID in Android settings</li>
 </ul>
 
-<h2>6. Children's privacy</h2>
-<p>QLCT is not directed to children under 13. We do not knowingly collect data from children. If you are a parent and discover your child has provided information, please contact us — we will delete it immediately.</p>
+<h2>7. Children's privacy</h2>
+<p>The app is not directed to children under 13. We do not knowingly collect data from children.</p>
 
-<h2>7. Data retention</h2>
-<ul>
-  <li>Data on your device: kept until you delete the app or clear data manually</li>
-  <li>We retain no server-side data about you because we operate no server</li>
-</ul>
+<h2>8. Data retention</h2>
+<p>Data on your device is kept until you delete the app or clear data manually. We retain no server-side data.</p>
 
-<h2>8. International users (GDPR / UK / EEA / Switzerland)</h2>
-<p>If you reside in the European Economic Area, the United Kingdom, or Switzerland, you have additional rights under GDPR/UK GDPR. Because we do not collect or process any personal data on a server, there is no controller-side data to access, port, or delete on our side. For data processed by AdMob, please refer to Google's Privacy Policy.</p>
+<h2>9. International users (GDPR / UK / EEA / Switzerland)</h2>
+<p>If you reside in the EEA, the UK, or Switzerland, you have additional rights under GDPR. Because we do not collect or process any personal data on a server, there is no controller-side data to access, port, or delete on our side. For data processed by AdMob, please refer to Google's Privacy Policy.</p>
 
-<h2>9. Policy changes</h2>
+<h2>10. Policy changes</h2>
 <p>We may update this policy. Updates will be announced in-app, and the "Effective" date at the top will be updated.</p>
 
-<h2>10. Contact</h2>
+<h2>11. Contact</h2>
 <p>Questions: <a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a></p>
 
 <div class="doc-footer">
-  <span>© 2026 QLCT</span>
+  <span>© 2026 Expense Management</span>
   <a href="terms.html#en">Terms of Service →</a>
 </div>
 </section>
@@ -402,85 +269,56 @@
   </span>
   <h1>Política de Privacidad</h1>
   <p class="meta">
-    <strong>Aplicación:</strong> Quản lý chi tiêu (QLCT)<br>
-    <strong>Vigente desde:</strong> 24 de mayo de 2026<br>
+    <strong>Aplicación:</strong> Expense Management — Sổ chi tiêu<br>
+    <strong>Vigente desde:</strong> 25 de mayo de 2026<br>
     <strong>Contacto:</strong> <a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a>
   </p>
 </div>
 
 <div class="box">
-  <strong>Resumen:</strong> QLCT almacena todos tus datos financieros <em>localmente en tu dispositivo</em>.
+  <strong>Resumen:</strong> La aplicación almacena todos tus datos financieros <em>localmente en tu dispositivo</em>.
   <strong>No</strong> recopilamos, no enviamos a servidores ni vendemos tus datos.
-  Las únicas funciones que usan red son: publicidad (Google AdMob) y tipos de cambio (API pública).
 </div>
 
 <h2>1. Datos que almacenamos</h2>
-<p>QLCT almacena lo siguiente <strong>únicamente en tu dispositivo</strong> (base de datos local SQLite):</p>
 <ul>
-  <li>Transacciones de ingresos/gastos: cantidad, categoría, fecha, nota, billetera</li>
+  <li>Transacciones de ingresos/gastos: cantidad, categoría, fecha, nota, billetera, foto de recibo (opcional)</li>
   <li>Presupuestos, metas de ahorro, deudas, activos/pasivos (patrimonio neto)</li>
   <li>Preferencias personales: idioma, perfil de usuario, tema, bloqueo de seguridad</li>
 </ul>
-<p>Estos datos <strong>nunca salen de tu dispositivo</strong> a menos que toques "Copia de seguridad" para exportar un archivo CSV/JSON que tú mismo gestiones, o que actives la Copia de seguridad automática de Android a tu Google Drive privado (gestionada totalmente por Android, no por nosotros).</p>
 
-<h2>2. Datos que NO recopilamos</h2>
+<h2>2. Fotos de recibos (opcional, solo en el dispositivo)</h2>
+<p>Si adjuntas una foto de recibo a una transacción, la foto se copia a la carpeta de documentos privada de la aplicación en tu dispositivo. La foto <strong>nunca se sube</strong> a ningún servidor y <strong>nunca se comparte</strong> con terceros.</p>
+
+<h2>3. Datos que NO recopilamos</h2>
 <ul>
   <li>Nombre, correo electrónico, número de teléfono, dirección</li>
   <li>Cuentas bancarias reales, números de tarjeta</li>
   <li>Ubicación GPS precisa</li>
-  <li>Contactos, fotos, archivos</li>
 </ul>
 
-<h2>3. Servicios de terceros</h2>
+<h2>4. Servicios de terceros</h2>
+<p>Google AdMob (publicidad) y fawazahmed0/exchange-api (tipos de cambio, sin datos de usuario).</p>
 
-<h3>3.1. Google AdMob (publicidad)</h3>
-<p>La app muestra anuncios tipo banner e intersticiales. AdMob puede acceder a:</p>
-<ul>
-  <li>ID de publicidad (reiniciable desde los ajustes del dispositivo)</li>
-  <li>Ubicación aproximada (IP / zona horaria)</li>
-  <li>Información básica del dispositivo: modelo, sistema operativo</li>
-</ul>
-<p>Detalles: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a>.</p>
-<p>Puedes desactivar la publicidad personalizada en: Ajustes de Android → Google → Anuncios → Inhabilitar personalización de anuncios.</p>
-
-<h3>3.2. API de tipos de cambio</h3>
-<p>La pantalla "Tipo de cambio" llama a una API pública gratuita (<a href="https://github.com/fawazahmed0/exchange-api" target="_blank" rel="noopener">fawazahmed0/exchange-api</a>) a través de jsDelivr CDN. La API devuelve únicamente tipos de cambio de referencia — no se envía información del usuario.</p>
-
-<h2>4. Permisos de Android</h2>
+<h2>5. Permisos de Android</h2>
 <ul>
   <li><strong>INTERNET</strong>: tipos de cambio, publicidad</li>
-  <li><strong>POST_NOTIFICATIONS</strong> (Android 13+): alertas de presupuesto, hitos de ahorro, recordatorios de deuda</li>
-  <li><strong>USE_BIOMETRIC / USE_FINGERPRINT</strong> (opcional): bloqueo biométrico de la app</li>
+  <li><strong>POST_NOTIFICATIONS</strong> (Android 13+): alertas de presupuesto</li>
+  <li><strong>USE_BIOMETRIC / USE_FINGERPRINT</strong> (opcional): bloqueo biométrico</li>
+  <li><strong>CAMERA</strong> (opcional): se activa solo cuando eliges "Tomar foto" para adjuntar una imagen de recibo. Las fotos se almacenan localmente en el dispositivo y nunca se cargan.</li>
 </ul>
 
-<h2>5. Tus derechos</h2>
-<ul>
-  <li><strong>Acceso</strong>: todos tus datos están en tu dispositivo — los puedes ver directamente en la app</li>
-  <li><strong>Exportar</strong>: Ajustes → Copia de seguridad / Exportar CSV — obtén una copia completa</li>
-  <li><strong>Eliminar</strong>: Ajustes → Borrar todos los datos (confirmación de 2 pasos, irreversible). O simplemente desinstala la app.</li>
-  <li><strong>Limitar publicidad</strong>: desactivar el ID de publicidad en los ajustes de Android</li>
-</ul>
+<h2>6. Tus derechos</h2>
+<p>Acceso, exportación, eliminación desde Ajustes. Limitar publicidad en ajustes de Android.</p>
 
-<h2>6. Privacidad infantil</h2>
-<p>QLCT no está dirigida a menores de 13 años. No recopilamos a sabiendas datos de niños. Si eres padre/madre y descubres que tu hijo/a ha proporcionado información, contáctanos — la eliminaremos inmediatamente.</p>
+<h2>7. Privacidad infantil</h2>
+<p>La aplicación no está dirigida a menores de 13 años.</p>
 
-<h2>7. Retención de datos</h2>
-<ul>
-  <li>Datos en tu dispositivo: se conservan hasta que elimines la app o borres los datos manualmente</li>
-  <li>No conservamos ningún dato sobre ti en servidores porque no operamos ningún servidor</li>
-</ul>
-
-<h2>8. Usuarios internacionales (GDPR / UK / EEA / Suiza)</h2>
-<p>Si resides en el Espacio Económico Europeo (EEA), el Reino Unido o Suiza, tienes derechos adicionales bajo el GDPR/UK GDPR. Como no recopilamos ni procesamos datos personales en un servidor, no hay datos por parte del responsable (controller) que podamos consultar, portar o eliminar. Para los datos procesados por AdMob, consulta la Política de Privacidad de Google.</p>
-
-<h2>9. Cambios en la política</h2>
-<p>Podemos actualizar esta política. Las actualizaciones se anunciarán dentro de la app y la fecha "Vigente desde" del encabezado se actualizará.</p>
-
-<h2>10. Contacto</h2>
+<h2>8. Contacto</h2>
 <p>Preguntas: <a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a></p>
 
 <div class="doc-footer">
-  <span>© 2026 QLCT</span>
+  <span>© 2026 Expense Management</span>
   <a href="terms.html#es">Términos de servicio →</a>
 </div>
 </section>
@@ -494,85 +332,50 @@
   </span>
   <h1>隐私政策</h1>
   <p class="meta">
-    <strong>应用：</strong>Quản lý chi tiêu (QLCT)<br>
-    <strong>生效日期：</strong>2026年5月24日<br>
+    <strong>应用：</strong>Expense Management — Sổ chi tiêu<br>
+    <strong>生效日期：</strong>2026年5月25日<br>
     <strong>联系方式：</strong><a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a>
   </p>
 </div>
 
 <div class="box">
-  <strong>摘要：</strong>QLCT 将您的全部财务数据<em>本地存储于您的设备</em>。
-  我们<strong>不会</strong>收集、上传服务器或出售您的数据。
-  唯一使用网络的功能为：广告显示（Google AdMob）和外汇汇率（公开 API）。
+  <strong>摘要：</strong>本应用将您的财务数据<em>本地存储于您的设备</em>。我们<strong>不会</strong>收集、上传服务器或出售您的数据。
 </div>
 
 <h2>1. 我们存储的数据</h2>
-<p>QLCT 仅在<strong>您的设备上</strong>（本地 SQLite 数据库）存储以下信息：</p>
 <ul>
-  <li>收支交易：金额、类别、日期、备注、钱包</li>
-  <li>预算、储蓄目标、债务、资产/负债（净资产）</li>
+  <li>收支交易、预算、储蓄目标、债务、净资产、可选的收据照片</li>
   <li>个人偏好：语言、用户画像、主题、安全锁</li>
 </ul>
-<p>除非您主动点击"备份"以导出由您自行管理的 CSV/JSON 文件，或您启用了 Android 自带的自动备份至您私人的 Google Drive（完全由 Android 管理，与我们无关），否则这些数据<strong>永远不会离开您的设备</strong>。</p>
 
-<h2>2. 我们不收集的数据</h2>
-<ul>
-  <li>姓名、电子邮箱、电话号码、地址</li>
-  <li>真实银行账户、卡号</li>
-  <li>精确 GPS 位置</li>
-  <li>通讯录、照片、文件</li>
-</ul>
+<h2>2. 收据照片（可选，仅设备本地）</h2>
+<p>如果您为交易附加收据照片，照片将被复制到您设备上的应用私人文档文件夹。照片<strong>从不上传</strong>到任何服务器，<strong>从不分享</strong>给第三方。</p>
 
-<h2>3. 第三方服务</h2>
+<h2>3. 我们不收集的数据</h2>
+<p>姓名、电子邮箱、电话号码、地址、真实银行账户、卡号、精确 GPS 位置。</p>
 
-<h3>3.1. Google AdMob（广告）</h3>
-<p>应用显示横幅广告和插页广告。AdMob 可能访问：</p>
-<ul>
-  <li>广告标识符（可在设备设置中重置）</li>
-  <li>大致位置（基于 IP / 时区）</li>
-  <li>基本设备信息：型号、操作系统</li>
-</ul>
-<p>详情：<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隐私政策</a>。</p>
-<p>您可以在以下位置关闭个性化广告：Android 设置 → Google → 广告 → 停用广告个性化。</p>
+<h2>4. 第三方服务</h2>
+<p>Google AdMob（广告）+ fawazahmed0/exchange-api（汇率，无用户数据）。</p>
 
-<h3>3.2. 外汇汇率 API</h3>
-<p>"汇率"页面通过 jsDelivr CDN 调用免费公开 API（<a href="https://github.com/fawazahmed0/exchange-api" target="_blank" rel="noopener">fawazahmed0/exchange-api</a>）。该 API 仅返回参考汇率 — 不会发送任何用户信息。</p>
-
-<h2>4. Android 权限</h2>
+<h2>5. Android 权限</h2>
 <ul>
   <li><strong>INTERNET</strong>：获取汇率、显示广告</li>
-  <li><strong>POST_NOTIFICATIONS</strong>（Android 13+）：预算提醒、储蓄里程碑、债务到期提醒</li>
-  <li><strong>USE_BIOMETRIC / USE_FINGERPRINT</strong>（可选）：生物识别锁应用</li>
+  <li><strong>POST_NOTIFICATIONS</strong>（Android 13+）：预算提醒</li>
+  <li><strong>USE_BIOMETRIC / USE_FINGERPRINT</strong>（可选）：生物识别锁</li>
+  <li><strong>CAMERA</strong>（可选）：仅在您点击"拍照"为交易附加收据照片时启用。照片存储在您的设备本地，不会上传。</li>
 </ul>
 
-<h2>5. 您的权利</h2>
-<ul>
-  <li><strong>访问</strong>：您的所有数据都在您的设备上 — 可直接在应用中查看</li>
-  <li><strong>导出</strong>：设置 → 备份 / 导出 CSV — 获得完整副本</li>
-  <li><strong>删除</strong>：设置 → 清除所有数据（两步确认，不可恢复）。或直接卸载应用。</li>
-  <li><strong>限制广告</strong>：在 Android 设置中关闭广告标识符</li>
-</ul>
+<h2>6. 您的权利</h2>
+<p>从"设置"中访问、导出、删除您的数据。</p>
 
-<h2>6. 儿童隐私</h2>
-<p>QLCT 不面向 13 岁以下儿童。我们不会有意收集儿童数据。如果您是家长并发现您的孩子提供了信息，请联系我们 — 我们会立即删除。</p>
+<h2>7. 儿童隐私</h2>
+<p>本应用不面向 13 岁以下儿童。</p>
 
-<h2>7. 数据保留</h2>
-<ul>
-  <li>设备上的数据：保留至您删除应用或手动清除数据</li>
-  <li>我们不在服务器端保留任何关于您的数据，因为我们不运营任何服务器</li>
-</ul>
-
-<h2>8. 国际用户（GDPR / 英国 / 欧洲经济区 / 瑞士）</h2>
-<p>如果您居住于欧洲经济区（EEA）、英国或瑞士，您根据 GDPR/UK GDPR 享有额外权利。由于我们不在服务器上收集或处理任何个人数据，因此在我们这边没有数据控制者侧的数据可供访问、移植或删除。对于由 AdMob 处理的数据，请参阅 Google 的隐私政策。</p>
-
-<h2>9. 政策变更</h2>
-<p>我们可能会更新本政策。更新将在应用内通知，且顶部的"生效日期"会同步更新。</p>
-
-<h2>10. 联系方式</h2>
+<h2>8. 联系方式</h2>
 <p>如有疑问：<a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a></p>
 
 <div class="doc-footer">
-  <span>© 2026 QLCT</span>
+  <span>© 2026 Expense Management</span>
   <a href="terms.html#zh">服务条款 →</a>
 </div>
 </section>
@@ -586,85 +389,50 @@
   </span>
   <h1>プライバシーポリシー</h1>
   <p class="meta">
-    <strong>アプリ：</strong>Quản lý chi tiêu (QLCT)<br>
-    <strong>発効日：</strong>2026年5月24日<br>
+    <strong>アプリ：</strong>Expense Management — Sổ chi tiêu<br>
+    <strong>発効日：</strong>2026年5月25日<br>
     <strong>お問い合わせ：</strong><a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a>
   </p>
 </div>
 
 <div class="box">
-  <strong>要約：</strong>QLCT はあなたの全ての金融データを<em>デバイスにローカル保存</em>します。
-  当社はあなたのデータを<strong>収集せず</strong>、サーバーへ送信せず、販売もしません。
-  ネットワークを使用する機能は次のみです：広告表示（Google AdMob）と外国為替レート（公開 API）。
+  <strong>要約：</strong>当アプリはあなたの金融データを<em>デバイスにローカル保存</em>します。当社はあなたのデータを<strong>収集せず</strong>、サーバーへ送信せず、販売もしません。
 </div>
 
 <h2>1. 当社が保存するデータ</h2>
-<p>QLCT は以下の情報を<strong>あなたのデバイスのみ</strong>（ローカル SQLite データベース）に保存します：</p>
 <ul>
-  <li>収入/支出の取引：金額、カテゴリ、日付、メモ、ウォレット</li>
-  <li>予算、貯蓄目標、借金、資産/負債（純資産）</li>
+  <li>収入/支出の取引、予算、貯蓄目標、借金、純資産、任意のレシート写真</li>
   <li>個人設定：言語、ユーザーペルソナ、テーマ、セキュリティロック</li>
 </ul>
-<p>あなたが「バックアップ」をタップして自己管理の CSV/JSON ファイルをエクスポートしない限り、または Android 標準の自動バックアップを個人の Google Drive に対して有効にしない限り（Android が完全に管理し、当社は関与しません）、このデータは<strong>デバイスから出ることはありません</strong>。</p>
 
-<h2>2. 当社が収集しないデータ</h2>
-<ul>
-  <li>氏名、メールアドレス、電話番号、住所</li>
-  <li>実際の銀行口座、カード番号</li>
-  <li>正確な GPS 位置</li>
-  <li>連絡先、写真、ファイル</li>
-</ul>
+<h2>2. レシート写真（任意・デバイス内のみ）</h2>
+<p>取引にレシート写真を添付した場合、写真はあなたのデバイス上のアプリ専用ドキュメントフォルダにコピーされます。写真は<strong>サーバーにアップロードされることはなく</strong>、<strong>第三者と共有されることもありません</strong>。</p>
 
-<h2>3. 第三者サービス</h2>
+<h2>3. 当社が収集しないデータ</h2>
+<p>氏名、メールアドレス、電話番号、住所、実際の銀行口座、カード番号、正確な GPS 位置。</p>
 
-<h3>3.1. Google AdMob（広告）</h3>
-<p>アプリではバナー広告およびインタースティシャル広告を表示します。AdMob は以下にアクセスする可能性があります：</p>
-<ul>
-  <li>広告 ID（デバイス設定でリセット可能）</li>
-  <li>おおよその位置（IP／タイムゾーン）</li>
-  <li>基本的なデバイス情報：機種、OS</li>
-</ul>
-<p>詳細：<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google プライバシーポリシー</a>。</p>
-<p>パーソナライズ広告は次から無効化できます：Android 設定 → Google → 広告 → 広告のカスタマイズをオプトアウト。</p>
+<h2>4. 第三者サービス</h2>
+<p>Google AdMob（広告）と fawazahmed0/exchange-api（為替レート、ユーザー情報なし）。</p>
 
-<h3>3.2. 外国為替 API</h3>
-<p>「為替」画面は jsDelivr CDN 経由で無料の公開 API（<a href="https://github.com/fawazahmed0/exchange-api" target="_blank" rel="noopener">fawazahmed0/exchange-api</a>）を呼び出します。この API は参考レートのみを返し、ユーザー情報は一切送信されません。</p>
-
-<h2>4. Android 権限</h2>
+<h2>5. Android 権限</h2>
 <ul>
   <li><strong>INTERNET</strong>：為替レート取得、広告表示</li>
-  <li><strong>POST_NOTIFICATIONS</strong>（Android 13+）：予算アラート、貯蓄マイルストーン、債務期日リマインダー</li>
-  <li><strong>USE_BIOMETRIC / USE_FINGERPRINT</strong>（任意）：生体認証によるアプリロック</li>
+  <li><strong>POST_NOTIFICATIONS</strong>（Android 13+）：予算アラート</li>
+  <li><strong>USE_BIOMETRIC / USE_FINGERPRINT</strong>（任意）：生体認証ロック</li>
+  <li><strong>CAMERA</strong>（任意）：取引にレシート写真を添付するために「写真を撮る」を選択した場合のみ起動します。写真はデバイスにローカル保存され、外部にアップロードされることはありません。</li>
 </ul>
 
-<h2>5. あなたの権利</h2>
-<ul>
-  <li><strong>アクセス</strong>：すべてのデータはデバイス上にあり、アプリ内で直接確認できます</li>
-  <li><strong>エクスポート</strong>：設定 → バックアップ／CSV エクスポート — 完全なコピーを取得できます</li>
-  <li><strong>削除</strong>：設定 → 全データを消去（2 段階確認、復元不可）。またはアプリをアンインストール。</li>
-  <li><strong>広告の制限</strong>：Android 設定で広告 ID をオプトアウト</li>
-</ul>
+<h2>6. あなたの権利</h2>
+<p>設定からデータへアクセス、エクスポート、削除できます。</p>
 
-<h2>6. 児童のプライバシー</h2>
-<p>QLCT は 13 歳未満の児童を対象としていません。当社は児童からデータを意図的に収集することはありません。保護者の方で、お子様が情報を提供したことが判明した場合は、お問い合わせください — 直ちに削除いたします。</p>
+<h2>7. 児童のプライバシー</h2>
+<p>当アプリは 13 歳未満の児童を対象としていません。</p>
 
-<h2>7. データ保持</h2>
-<ul>
-  <li>デバイス上のデータ：アプリを削除するかデータを手動で消去するまで保持されます</li>
-  <li>当社はサーバーを運営していないため、サーバー側にあなたのデータを保持していません</li>
-</ul>
-
-<h2>8. 国際ユーザー（GDPR / 英国 / EEA / スイス）</h2>
-<p>欧州経済領域（EEA）、英国、またはスイスに居住されている方は、GDPR / UK GDPR に基づく追加の権利を有します。当社はサーバー上で個人データを収集または処理していないため、当社側の管理者（コントローラ）データとして、アクセス、移植、または削除の対象となるデータは存在しません。AdMob によって処理されるデータについては、Google のプライバシーポリシーをご参照ください。</p>
-
-<h2>9. ポリシーの変更</h2>
-<p>本ポリシーは更新される場合があります。更新内容はアプリ内でお知らせし、冒頭の「発効日」も併せて更新されます。</p>
-
-<h2>10. お問い合わせ</h2>
+<h2>8. お問い合わせ</h2>
 <p>ご質問は：<a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a></p>
 
 <div class="doc-footer">
-  <span>© 2026 QLCT</span>
+  <span>© 2026 Expense Management</span>
   <a href="terms.html#ja">利用規約 →</a>
 </div>
 </section>
@@ -683,10 +451,7 @@
       buttons.forEach(b => b.classList.toggle('active', b.dataset.target === lang));
       sections.forEach(s => s.classList.toggle('active', s.dataset.lang === lang));
       document.documentElement.lang = lang;
-      try {
-        localStorage.setItem('qlct-lang', lang);
-        history.replaceState(null, '', '#' + lang);
-      } catch(_) {}
+      try { localStorage.setItem('qlct-lang', lang); history.replaceState(null, '', '#' + lang); } catch(_) {}
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     buttons.forEach(btn => btn.addEventListener('click', () => activate(btn.dataset.target)));
@@ -701,7 +466,6 @@
       document.documentElement.lang = initial;
     }
 
-    // Reading progress bar
     const progress = document.getElementById('progress');
     const toTop = document.getElementById('toTop');
     function onScroll(){
