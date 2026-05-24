@@ -3,33 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Điều khoản sử dụng — Quản lý chi tiêu</title>
+<title>Terms of Service — Quản lý chi tiêu (QLCT)</title>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-         max-width: 760px; margin: 40px auto; padding: 0 24px;
-         color: #1f2937; line-height: 1.6; }
-  h1 { color: #7FD603; border-bottom: 2px solid #7FD603; padding-bottom: 8px; }
+  :root { --green: #7FD603; --text: #1f2937; --muted: #6b7280; --soft: #f9fafb; --border: #e5e7eb; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+         "Noto Sans", "Noto Sans CJK SC", "Noto Sans JP", sans-serif;
+         max-width: 780px; margin: 0 auto; padding: 0 24px 60px;
+         color: var(--text); line-height: 1.65; background: #fff; }
+  h1 { color: var(--green); border-bottom: 2px solid var(--green); padding-bottom: 8px; margin-top: 30px; }
   h2 { color: #374151; margin-top: 32px; }
-  a { color: #7FD603; }
-  .lang-switch { text-align: right; margin-bottom: 16px; }
-  .lang-switch a { margin-left: 12px; font-size: 13px; }
-  .meta { color: #6b7280; font-size: 13px; }
+  a { color: var(--green); }
+  ul li { margin: 6px 0; }
+  .meta { color: var(--muted); font-size: 13px; }
+  .lang-switch {
+    position: sticky; top: 0; background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(8px); padding: 12px 0;
+    border-bottom: 1px solid var(--border); text-align: center;
+    margin-bottom: 24px; z-index: 100;
+  }
+  .lang-switch button {
+    background: transparent; border: 1px solid var(--border);
+    padding: 6px 12px; margin: 0 3px; border-radius: 6px;
+    cursor: pointer; font-size: 13px; color: var(--text);
+    transition: all 0.15s ease;
+  }
+  .lang-switch button:hover { border-color: var(--green); }
+  .lang-switch button.active {
+    background: var(--green); border-color: var(--green); color: white;
+  }
+  section[data-lang] { display: none; }
+  section[data-lang].active { display: block; }
+  .home-link { display: block; text-align: center; margin: 50px 0 0;
+               color: var(--muted); font-size: 14px; }
+  @media (max-width: 480px) {
+    .lang-switch button { padding: 5px 8px; margin: 2px; font-size: 12px; }
+  }
 </style>
 </head>
 <body>
+
 <div class="lang-switch">
-  <a href="#vi">Tiếng Việt</a> · <a href="#en">English</a> · <a href="index.html">← Home</a>
+  <button data-target="vi" class="active">🇻🇳 Tiếng Việt</button>
+  <button data-target="en">🇺🇸 English</button>
+  <button data-target="es">🇪🇸 Español</button>
+  <button data-target="zh">🇨🇳 中文</button>
+  <button data-target="ja">🇯🇵 日本語</button>
 </div>
 
-<section id="vi">
+<!-- =================== VIETNAMESE =================== -->
+<section data-lang="vi" class="active">
 <h1>Điều khoản sử dụng</h1>
-<p class="meta"><strong>Có hiệu lực:</strong> 17/05/2026</p>
+<p class="meta"><strong>Có hiệu lực:</strong> 24/05/2026</p>
 
 <h2>1. Chấp nhận điều khoản</h2>
 <p>Khi cài đặt và sử dụng app "Quản lý chi tiêu" (QLCT), bạn đồng ý với các điều khoản dưới đây.</p>
 
 <h2>2. Mục đích sử dụng</h2>
-<p>QLCT là công cụ ghi chép thu chi cá nhân. Mọi tính năng như Ngân sách, Tiết kiệm, Thuế TNCN, Tỷ giá đều mang tính <strong>tham khảo</strong> — KHÔNG thay thế tư vấn tài chính/kế toán/pháp lý chuyên nghiệp.</p>
+<p>QLCT là công cụ ghi chép thu chi cá nhân. Mọi tính năng như Ngân sách, Tiết kiệm, Thuế TNCN, Tỷ giá đều mang tính <strong>tham khảo</strong> — KHÔNG thay thế tư vấn tài chính / kế toán / pháp lý chuyên nghiệp.</p>
 
 <h2>3. Trách nhiệm của bạn</h2>
 <ul>
@@ -49,8 +80,8 @@
 <h2>5. Giới hạn trách nhiệm</h2>
 <p>Chúng tôi KHÔNG chịu trách nhiệm cho bất kỳ tổn thất tài chính, dữ liệu, hoặc thiệt hại nào phát sinh từ việc sử dụng app. Bao gồm nhưng không giới hạn: quyết định đầu tư sai dựa trên báo cáo trong app, tính thuế sai vì luật thay đổi, mất dữ liệu do gỡ cài đặt.</p>
 
-<h2>6. Quảng cáo &amp; In-app Purchase</h2>
-<p>Bản miễn phí có quảng cáo (Google AdMob). Bản Pro (mua một lần qua Google Play) loại bỏ hoàn toàn quảng cáo. Mua Pro KHÔNG được hoàn tiền trừ trường hợp Google cho phép theo chính sách của họ.</p>
+<h2>6. Quảng cáo</h2>
+<p>App hiển thị quảng cáo của Google AdMob. Việc tương tác với quảng cáo (nếu có) tuân theo điều khoản của Google. Chúng tôi không kiểm soát nội dung quảng cáo cụ thể được hiển thị.</p>
 
 <h2>7. Sở hữu trí tuệ</h2>
 <p>Mọi nội dung trong app (giao diện, code, asset, mẹo tiết kiệm) thuộc về chủ sở hữu app. Bạn được cấp quyền sử dụng cá nhân, không độc quyền, không chuyển nhượng.</p>
@@ -65,11 +96,10 @@
 <p>Câu hỏi về điều khoản: <a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a></p>
 </section>
 
-<hr style="margin: 60px 0; border: none; border-top: 1px solid #e5e7eb;">
-
-<section id="en">
+<!-- =================== ENGLISH =================== -->
+<section data-lang="en">
 <h1>Terms of Service</h1>
-<p class="meta"><strong>Effective:</strong> 17 May 2026</p>
+<p class="meta"><strong>Effective:</strong> 24 May 2026</p>
 
 <h2>1. Acceptance</h2>
 <p>By installing and using "Quản lý chi tiêu" (QLCT), you agree to the terms below.</p>
@@ -95,8 +125,8 @@
 <h2>5. Limitation of liability</h2>
 <p>We are NOT responsible for any financial loss, data loss, or damages arising from use of the app — including but not limited to: wrong investment decisions based on app reports, incorrect tax calculations due to law changes, data loss from uninstalling.</p>
 
-<h2>6. Ads &amp; In-app Purchase</h2>
-<p>The free version shows ads (Google AdMob). The Pro version (one-time purchase via Google Play) removes all ads. Pro purchase is NON-REFUNDABLE except where Google's policy allows.</p>
+<h2>6. Advertising</h2>
+<p>The app displays Google AdMob advertisements. Interaction with ads (if any) is governed by Google's terms. We do not control the specific ad content shown.</p>
 
 <h2>7. Intellectual property</h2>
 <p>All content in the app (UI, code, assets, money tips) belongs to the app owner. You are granted a personal, non-exclusive, non-transferable license to use.</p>
@@ -111,5 +141,157 @@
 <p>Questions about these terms: <a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a></p>
 </section>
 
+<!-- =================== SPANISH =================== -->
+<section data-lang="es">
+<h1>Términos de servicio</h1>
+<p class="meta"><strong>Vigente desde:</strong> 24 de mayo de 2026</p>
+
+<h2>1. Aceptación</h2>
+<p>Al instalar y usar "Quản lý chi tiêu" (QLCT), aceptas los términos a continuación.</p>
+
+<h2>2. Propósito</h2>
+<p>QLCT es una herramienta de seguimiento de gastos personales. Todas las funciones como Presupuesto, Ahorros, Calculadora de impuestos, Tipos de cambio son <strong>solo de referencia</strong> — NO sustituyen el asesoramiento financiero, contable o legal profesional.</p>
+
+<h2>3. Tus responsabilidades</h2>
+<ul>
+  <li>Eres responsable de respaldar tus datos (Ajustes → Copia de seguridad)</li>
+  <li>No uses la app para fines ilegales o fraudulentos</li>
+  <li>No realices ingeniería inversa, descompiles ni redistribuyas el APK</li>
+</ul>
+
+<h2>4. Sin garantía</h2>
+<p>La app se proporciona "TAL CUAL". No garantizamos:</p>
+<ul>
+  <li>La exactitud absoluta de los tipos de cambio o fórmulas fiscales (las leyes pueden cambiar)</li>
+  <li>Que la app esté libre de errores</li>
+  <li>Que los datos nunca se pierdan (haz copias de seguridad con regularidad)</li>
+</ul>
+
+<h2>5. Limitación de responsabilidad</h2>
+<p>NO somos responsables de ninguna pérdida financiera, de datos o daño que surja del uso de la app — incluyendo pero no limitándose a: decisiones de inversión erróneas basadas en los reportes de la app, cálculos incorrectos de impuestos debido a cambios legales, pérdida de datos por desinstalación.</p>
+
+<h2>6. Publicidad</h2>
+<p>La app muestra publicidad de Google AdMob. La interacción con anuncios (si la hay) se rige por los términos de Google. No controlamos el contenido específico de los anuncios mostrados.</p>
+
+<h2>7. Propiedad intelectual</h2>
+<p>Todo el contenido de la app (UI, código, activos, consejos de ahorro) pertenece al propietario de la app. Se te otorga una licencia personal, no exclusiva e intransferible para su uso.</p>
+
+<h2>8. Terminación</h2>
+<p>Puedes desinstalar la app en cualquier momento. Podemos dejar de publicar la app en el futuro sin obligación de continuar el soporte.</p>
+
+<h2>9. Ley aplicable</h2>
+<p>Estos términos se rigen por la ley vietnamita. Las disputas se resolverán en los tribunales competentes de Vietnam.</p>
+
+<h2>10. Contacto</h2>
+<p>Preguntas sobre estos términos: <a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a></p>
+</section>
+
+<!-- =================== CHINESE (Simplified) =================== -->
+<section data-lang="zh">
+<h1>服务条款</h1>
+<p class="meta"><strong>生效日期：</strong>2026年5月24日</p>
+
+<h2>1. 接受条款</h2>
+<p>安装并使用 "Quản lý chi tiêu"（QLCT）即表示您同意以下条款。</p>
+
+<h2>2. 用途</h2>
+<p>QLCT 是一款个人支出记录工具。预算、储蓄、个税计算器、汇率等所有功能<strong>仅供参考</strong> — 不能替代专业的财务、会计或法律建议。</p>
+
+<h2>3. 您的责任</h2>
+<ul>
+  <li>您有责任自行备份数据（设置 → 备份）</li>
+  <li>不得将本应用用于非法或欺诈用途</li>
+  <li>不得对 APK 进行逆向工程、反编译或再分发</li>
+</ul>
+
+<h2>4. 不作担保</h2>
+<p>本应用按"原样"提供。我们不担保：</p>
+<ul>
+  <li>汇率或税务公式的绝对准确性（法律可能变更）</li>
+  <li>应用无任何错误</li>
+  <li>数据永不丢失（请定期备份）</li>
+</ul>
+
+<h2>5. 责任限制</h2>
+<p>对于因使用本应用而产生的任何财务损失、数据丢失或损害，我们<strong>概不负责</strong> — 包括但不限于：基于应用报告作出的错误投资决策、因法律变更导致的错误税务计算、因卸载导致的数据丢失。</p>
+
+<h2>6. 广告</h2>
+<p>本应用显示 Google AdMob 广告。与广告（如有）的互动受 Google 条款约束。我们不控制所显示的具体广告内容。</p>
+
+<h2>7. 知识产权</h2>
+<p>应用中的所有内容（界面、代码、资源、理财建议）归应用所有者所有。我们向您授予个人的、非独占的、不可转让的使用许可。</p>
+
+<h2>8. 终止</h2>
+<p>您可以随时卸载本应用。我们可能在将来停止发布本应用，且没有继续提供支持的义务。</p>
+
+<h2>9. 适用法律</h2>
+<p>本条款受越南法律管辖。所有争议将在越南有管辖权的法院解决。</p>
+
+<h2>10. 联系方式</h2>
+<p>关于本条款的问题：<a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a></p>
+</section>
+
+<!-- =================== JAPANESE =================== -->
+<section data-lang="ja">
+<h1>利用規約</h1>
+<p class="meta"><strong>発効日：</strong>2026年5月24日</p>
+
+<h2>1. 同意</h2>
+<p>「Quản lý chi tiêu」（QLCT）をインストールし、使用することにより、以下の規約に同意したものとみなされます。</p>
+
+<h2>2. 目的</h2>
+<p>QLCT は個人の収支記録ツールです。予算、貯蓄、所得税計算機、為替などすべての機能は<strong>参考目的のみ</strong>であり、専門的な財務・会計・法律アドバイスの代替とはなりません。</p>
+
+<h2>3. ユーザーの責任</h2>
+<ul>
+  <li>データのバックアップはご自身で行ってください（設定 → バックアップ）</li>
+  <li>違法または不正な目的でアプリを使用しないでください</li>
+  <li>APK のリバースエンジニアリング、逆コンパイル、再配布を行わないでください</li>
+</ul>
+
+<h2>4. 無保証</h2>
+<p>本アプリは「現状のまま」提供されます。当社は以下を保証しません：</p>
+<ul>
+  <li>為替レートや税計算式の絶対的な正確性（法律は変更される可能性があります）</li>
+  <li>アプリにバグがないこと</li>
+  <li>データが失われないこと（定期的にバックアップしてください）</li>
+</ul>
+
+<h2>5. 責任の制限</h2>
+<p>本アプリの使用に起因する財務的損失、データ損失、その他いかなる損害についても、当社は<strong>一切の責任を負いません</strong> — アプリのレポートに基づく誤った投資判断、法改正による誤った税計算、アンインストールによるデータ損失等を含みますが、これらに限定されません。</p>
+
+<h2>6. 広告</h2>
+<p>本アプリは Google AdMob の広告を表示します。広告とのやり取り（ある場合）は Google の規約に従います。当社は表示される特定の広告内容を制御しません。</p>
+
+<h2>7. 知的財産権</h2>
+<p>アプリ内のすべてのコンテンツ（UI、コード、アセット、節約のヒント）はアプリ所有者に帰属します。個人的・非独占的・譲渡不可の使用ライセンスが付与されます。</p>
+
+<h2>8. 終了</h2>
+<p>いつでもアプリをアンインストールできます。当社は将来アプリの公開を停止することがあり、サポート継続の義務を負いません。</p>
+
+<h2>9. 準拠法</h2>
+<p>本規約はベトナム法に準拠します。紛争はベトナムの管轄裁判所で解決されます。</p>
+
+<h2>10. お問い合わせ</h2>
+<p>本規約に関するお問い合わせ：<a href="mailto:daothanhcong70@gmail.com">daothanhcong70@gmail.com</a></p>
+</section>
+
+<a class="home-link" href="index.html">← Home</a>
+
+<script>
+  (function(){
+    const buttons = document.querySelectorAll('.lang-switch button');
+    const sections = document.querySelectorAll('section[data-lang]');
+    function activate(lang){
+      buttons.forEach(b => b.classList.toggle('active', b.dataset.target === lang));
+      sections.forEach(s => s.classList.toggle('active', s.dataset.lang === lang));
+      document.documentElement.lang = lang;
+      try { history.replaceState(null, '', '#' + lang); } catch(_) {}
+    }
+    buttons.forEach(btn => btn.addEventListener('click', () => activate(btn.dataset.target)));
+    const hash = (location.hash || '').replace('#','');
+    if (['vi','en','es','zh','ja'].includes(hash)) activate(hash);
+  })();
+</script>
 </body>
 </html>
